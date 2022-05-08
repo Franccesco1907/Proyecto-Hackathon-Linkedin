@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <%- include('../partials/head', {title: 'Perfil Personal'}); %>
+  <style>
+    #loader-animation {
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #00629C;
+      border-bottom: 16px solid #00629C;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+      margin: auto;
+      padding: 10px;
+    }
+    
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    </style>
+</head>
+
+<body>
+  <div id="main-panel">
+    <%- include('../partials/sidenav'); %>
+
+    <div class="main-content" id="panel">
+  
+      <%- include('../partials/topnav'); %>
+  
+      <div class="header pb-6 d-flex align-items-center" style="min-height: 230px; background-size: cover; background-position: center top;">
+        <span class="mask bg-gradient-default opacity-8"></span>
+        <div class="container-fluid d-flex align-items-center">
+          <div class="row">
+            <div class="col-lg-12 col-md-10">
+              <h1 class="display-2 text-white" id="name-user"></h1>
+              <p class="text-white mt-0 mb-0 headline-user"></p>
+              <p class="text-white mt-0" id="industry-name"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="container-fluid mt--6">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card card-profile bg-gradient-primary">
+              <img src="/assets/img/theme/img-1-1000x600.jpg" alt="Fondo de Perfil" class="card-img-top">
+              <div class="row justify-content-center">
+                <div class="col-lg-3 order-lg-2">
+                  <div class="card-profile-image">
+                    <a href="#">
+                      <img src="/images/profileDefault.jpg" class="rounded-circle" id="photo-user" alt="Foto de Perfil">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-header bg-gradient-primary text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                <div class="d-flex justify-content-between">
+                </div>
+              </div>
+              <div class="card-body pt-4">
+                <div class="text-center">
+                  <h5 class="h3 text-white">
+                    <i class="fas fa-pager mr-2"></i>Edad aproximada<span class="font-weight-light" id="age-user"></span>
+                  </h5>
+                  <h5 class="h3 text-white">
+                    <i class="fas fa-users mr-2"></i>Grupo étnico<span class="font-weight-light" id="ethnic-user"></span>
+                  </h5>
+                  <div class="h3 text-white">
+                    <i class="fas fa-location-arrow mr-2"></i>Residente en <span class="font-weight-light" id="location-user"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card bg-gradient-primary border-0">
+              <div class="card-body">
+                <h5 class="h3 mb-0 text-white">Habilidades</h5>
+                <div class="mt-2" id="skills-user">
+                  
+                </div>
+              </div>
+            </div>
+            <div class="card bg-gradient-primary border-0">
+              <div class="card-body">
+                <h5 class="h3 mb-0 text-white">Infomación Adicional</h5>
+                <div class="mt-2">
+                  <h5 class="h4 text-white">
+                    <i class="fas fa-pager mr-2"></i>Páginas Web <span class="font-weight-light ml-2" id="web-pages"></span>
+                  </h5>
+                  <h5 class="h4 text-white">
+                    <i class="fas fa-envelope mr-2"></i>Correo <span class="font-weight-light" id="email-username"></span>
+                  </h5>
+                  <h5 class="h4 text-white">
+                    <i class="fab fa-twitter mr-2"></i>Twitter <span class="font-weight-light" id="twitter-username"></span>
+                  </h5>
+                  <h5 class="h4 text-white">
+                    <i class="fas fa-birthday-cake mr-2"></i>Fecha de nacimiento <span class="font-weight-light" id="birthdate-username"></span>
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card bg-gradient-default shadow">
+              <div class="card-header bg-transparent">
+                <h3 class="mb-0 text-white">Educación</h3>
+              </div>
+              <div class="card-body">
+                <div class="timeline timeline-one-side" data-timeline-content="axis" data-timeline-axis-style="dashed" id="education-user">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="card bg-gradient-default shadow">
+              <div class="card-header bg-transparent">
+                <h3 class="mb-0 text-white">Experiencia Laboral</h3>
+              </div>
+              <div class="card-body">
+                <div class="timeline timeline-one-side" data-timeline-content="axis" data-timeline-axis-style="dashed" id="works-user">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%- include('../partials/footer'); %>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="loader">
+  </div>
+
+  <div class="modal fade" id="loader-data" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+    <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+      <div class="modal-content bg-gradient-info">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title-notification">Recopilando información <i class="fas fa-hourglass pl-2"></i></h5>
+        </div>
+        <div class="modal-body">
+          <div class="py-3 text-center">
+            <div id="loader-animation">
+            </div>
+            <h4 class="heading mt-4">Esto podría tomar unos segundos</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../partials/scripts', {view: 'sb-profile'}); %>
+  <script src="/assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+  <!-- Core JS -->
+  <script src="/js/app/config.js"></script>
+  <!-- Personalization JS -->
+  <script>
+    var publicId = `<%= publicId %>`
+  </script>
+  <script src="/js/app/profile.js" type="module"></script>
+
+</body>
+
+</html>

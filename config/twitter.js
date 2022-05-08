@@ -1,0 +1,5 @@
+module.exports.apiKey = 'smAikUF4rFpyso5ZBmiCwe85j'
+module.exports.apiKeySecret = 'c2IiDqZano1UMeznRo1FtSOJ9FU8Bhpb3MoIwokyAPjpwetF2k'
+module.exports.bearerToken = 'AAAAAAAAAAAAAAAAAAAAAJOUYAEAAAAAdggOl2gKmQHDtfuEYMv4Nbxyo9U%3DwRrdDTrjeCVNO121YNVOPwIZQJMp18VLeTVoc2OegTGJ8BChtX'
+module.exports.accessToken = '1482373795038040065-5T4S915EdA2T6erG0sacNxXg5vB198'
+module.exports.accessTokenSecret = 'b7GNbRZFWjxzcYo2PgX4P8kiEjpanOq7BYLTzMO4ssINE'

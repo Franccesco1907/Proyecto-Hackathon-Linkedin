@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <%- include('../partials/head', {title: 'Perfiles Recientes'}); %>
+  <link rel="stylesheet" href="/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+</head>
+
+<body>
+  <%- include('../partials/sidenav'); %>
+
+  <div class="main-content" id="panel">
+
+    <%- include('../partials/topnav'); %>
+
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Búsquedas recientes almacenadas</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt--6">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="mb-0">Perfiles Recientes</h3>
+              <p class="text-sm mb-0">
+                Los datos mostrados tienen un tiempo de expiración de 30 minutos
+              </p>
+            </div>
+            <div class="table-responsive py-4">
+              <table class="table table-flush" id="datatable-basic">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>País</th>
+                    <th>Perfil Completo</th>
+                  </tr>
+                </thead>
+                <tbody id="profiles-data">
+                  <% for (let profile of profiles) { %>
+                  <tr>
+                    <td><%= profile.linkedin.name.toUpperCase() || '' %></td>
+                    <td><%= profile.linkedin.headline || '' %></td>
+                    <td><%= profile.linkedin.countryName || '' %></td>
+                    <td><a href="/profile?publicId=<%= profile.publicId %>" target="_blank"><span class="badge badge-success">Ver</span></a></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <%- include('../partials/footer'); %>
+    </div>
+  </div>
+
+  <%- include('../partials/scripts', {view: 'sb-recent-search'}); %>
+  <script src="/assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+  <script src="/assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="/assets/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <!-- Core JS -->
+  <script src="/js/app/config.js"></script>
+  <!-- Personalization JS -->
+  <script src="/js/app/recent-search.js" type="module"></script>
+
+</body>
+
+</html>

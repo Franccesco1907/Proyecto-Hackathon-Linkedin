@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <%- include('../partials/head', {title: 'Inicio'}); %>
+</head>
+
+<body>
+  <%- include('../partials/sidenav'); %>
+
+  <div class="main-content" id="panel">
+
+    <%- include('../partials/topnav'); %>
+    
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-12">
+              <h5 class="h2 text-white d-inline-block mb-0">¡Bienvenido a <span class="text-info">OlinO</span>!</h5>
+            </div>
+            <div class="col-lg-12">
+              <h6 class="h2 text-white d-inline-block mb-0">Una herramienta donde podrás encontrar información relevante de una persona a partir de varias fuentes</h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="card card-stats">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Información Actual de Linkedin</h5>
+                      <span class="h3 font-weight-bold mb-0">El cual contiene redes profesionales entre solicitantes de empleos y empleadores</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                        <i class="fab fa-linkedin"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="card card-stats">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Información Actual de Google</h5>
+                      <span class="h3 font-weight-bold mb-0">El buscador de información más popular del mundo que contiene información general</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                        <i class="fab fa-google"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 col-sm-12">
+              <div class="card card-stats">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Información Actual de Twitter</h5>
+                      <span class="h3 font-weight-bold mb-0">Una de las redes sociales más grandes del mundo</span>
+                      <span class="h4 font-weight-bold mb-0">(Proximamente Facebook)</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                        <i class="fab fa-twitter"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-icon btn-info" type="button" id="start-searching">
+                <span class="btn-inner--text">Empezar a buscar</span>
+                <span class="btn-inner--icon"><i class="fas fa-search"></i></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt--5">
+      <footer class="footer pt-0">
+        <div class="row align-items-center justify-content-lg-between">
+          <div class="col-lg-6">
+            <div class="copyright text-center text-lg-left text-white">
+              &copy; 2022 <a href="/" class="font-weight-bold ml-1 text-info" target="_blank">FredSons Team</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <%- include('../partials/scripts', {view: 'sb-search'}); %>
+  <script src="/assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
+  <!-- Core JS -->
+  <script src="/js/app/config.js"></script>
+  <!-- Personalization JS -->
+  <script src="/js/app/index.js" type="module"></script>
+
+</body>
+
+</html>
